@@ -5,6 +5,10 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+
+// Static directory
+app.use(express.static("public"));
+
 // Requiring our models for syncing
 var db = require("./models");
 
@@ -12,8 +16,11 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Static directory
-app.use(express.static("public"));
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================

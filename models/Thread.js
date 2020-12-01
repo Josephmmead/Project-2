@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Post = sequelize.define("Post", {
+    var Thread = sequelize.define("Thread", {
       title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -19,5 +19,5 @@ module.exports = function(sequelize, DataTypes) {
         defaultValue: "Gaming"
       }
     });
-    return Post;
+    return Thread;
   };
