@@ -1,3 +1,7 @@
+
+// this was pulled from one of our projects if we can use any of it lets if not dont worry about deleting it.
+
+
 // When the page loads, grab and display all of our posts
 $.get("/api/all", function(data) {
 
@@ -8,7 +12,7 @@ $.get("/api/all", function(data) {
         var row = $("<div>");
         row.addClass("post");
   
-        row.append("<p>" + data[i].author + " posted.. </p>");
+        row.append("<p>" + data[i].user + " posted.. </p>");
         row.append("<p>" + data[i].body + "</p>");
         row.append("<p>On " + new Date(data[i].created_at).toLocaleDateString() + "</p>");
   
@@ -24,7 +28,7 @@ $.get("/api/all", function(data) {
   
     // Make a newpost object
     var newPost = {
-      author: $("#author").val().trim(),
+      user: $("#author").val().trim(),
       body: $("#post-box").val().trim(),
       created_at: new Date().toISOString().slice(0, 19).replace('T', ' ')
     };
@@ -39,7 +43,7 @@ $.get("/api/all", function(data) {
         var row = $("<div>");
         row.addClass("Post");
   
-        row.append("<p>" + newPost.author + " posted: </p>");
+        row.append("<p>" + newPost.user + " posted: </p>");
         row.append("<p>" + newPost.body + "</p>");
         row.append("<p>On " + new Date(newPost.created_at).toLocaleDateString() + "</p>");
   

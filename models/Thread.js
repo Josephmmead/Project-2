@@ -1,11 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
     var Thread = sequelize.define("Thread", {
-      title: {
+      thread_name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
+      },
+      user: {
+        type: DataTypes.STRING,
+        defultValue: "Anonymous"
       },
       body: {
         type: DataTypes.TEXT,
