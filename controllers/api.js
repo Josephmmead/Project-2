@@ -1,16 +1,21 @@
 
+const { Sequelize } = require("../models");
 var db = require("../models");
 
 module.exports = function(app) {
 
     // getting all threads for main page
     app.get("/", function(req, res){
-        db.Thread.findAll({}).then(function(results){
+        db.Thread.findAll({
+          attributes: [
+            [Sequelize.fn('DISTINCT', Sequelize.col('thread_name')) , 'thread_name'],
+          ]
+        }).then(function(results){
             res.render("index", results);
         });
     });
 
-    // getting specific thread
+    // getting posts within a specific thread
     app.get("/api/thread/:thread_name", function(req, res){
       db.Thread.findAll({
           where: {
