@@ -71,20 +71,7 @@ module.exports = function(app) {
         })
       });
 
-      app.put("/api/thread", function(req, res) {
-        db.Thread.create({
-          thread_name: req.body.thread_name,
-          user: req.body.user,
-          body: req.body.body,
-          category: req.body.category,
-          where:{
-            id: req.body.id
-          }
-        }).then(function(results) {
-          res.json(results)
-        })
-      });
-
+      
       app.put("/api/thread", function(req, res) {
         db.Thread.create({
           thread_name: req.body.thread_name,
