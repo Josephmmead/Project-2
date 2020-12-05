@@ -1,0 +1,16 @@
+$primaryBorder : 7px double lightblue;
+$primaryFont : 'Anton', sans-serif;
+$jumbotronFontColor: rgb(206, 82, 45);
+
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin threadBorder{
+    border-radius: 7px / 7px;
+    background: #DAAD86;
+    padding: 20px; 
+    background-size: auto;   
+}
