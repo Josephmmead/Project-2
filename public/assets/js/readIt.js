@@ -55,3 +55,9 @@ $.get("/api/all", function(data) {
     $("#author").val("");
     $("#post-box").val("");
   });
+
+  $(document).ready(function (){
+    setTimeout(function() {
+      $("#myThreadModal").modal('show');
+    }, 2000);
+  })
