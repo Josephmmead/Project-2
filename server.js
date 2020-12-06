@@ -21,7 +21,9 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ layoutsDir: __dirname + '/views/layouts'}));
 app.set("view engine", "handlebars");
 
-
+Handlebars.registerPartial('categories', '{{prefix}}');
+Handlebars.registerPartial('posts', '{{prefix}}');
+Handlebars.registerPartial('subThread', '{{prefix}}');
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);

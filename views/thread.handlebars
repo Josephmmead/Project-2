@@ -106,38 +106,22 @@
     
     <div class="row" id="threadRow">
         <div class="col-xl-1" id="activeThread">
+            
             <ul>
-
                 {{#each Thread}}
-                {{> categories}}
+                {{>Thread/subThread}}
                 {{/each}}
-            </ul>
-            
-            
 
+            </ul>
 
         </div>
             
 
         <div class="col-xl-9" id="threadBody">
-            <p>um is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's
-                Letraset sheets containing Lorem Ipsum passages, ae like Aldus PageMaker including versions of Lorem
-                Ipum is simply dummy text
-                of
-                the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                ever
-                since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                specimen book. It has survived not only five centuries, but also the leap into electronic
-                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                of dummy text ever since the
-                1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-                has
-                survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-                PageMaker including versions of Lorem Ip</p>
+    {{#each Thread}}
+    {{> subthread}}
+    {{>/each}}
+
 
         </div>
     </div>
