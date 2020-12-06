@@ -3,9 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/thread", function(req, res) {
     
-    db.Thread.findAll({
-      include: [db.Post]
-    }).then(function(dbThread) {
+    db.Thread.findAll({}).then(function(dbThread) {
       res.json(dbThread);
     });
   });
