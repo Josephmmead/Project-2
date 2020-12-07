@@ -1,3 +1,5 @@
+
+
 $(function() {
 
 // create a new thread
@@ -7,6 +9,7 @@ $("#threadCreate").on("click", function(event) {
 
     var newThread = {
       thread_name: $("#threadName").val().trim(),
+      body: $("#threadContent").val().trim(),
       category: $(".dropdown-toggle").val()
     };
 
@@ -22,33 +25,25 @@ $("#threadCreate").on("click", function(event) {
     );
   });
 
-// create a new post 
-  $("#postCreate").on("click", function(event) {
-
-    event.preventDefault();
-
-    var newPost = {
-      title: $("#postTitle").val().trim(),
-      user: $("#postUser").val().trim(),
-      body: $("postBody").val().trim(),
-      thread_name: $(".dropdown-toggle").val(),
-      // figure out how to get this Id from the handlebars 
-      threadID: $(".Something or other").val()
-    };
-
-    $.ajax("/api/post", {
-      type: "POST",
-      data: newPost
-    }).then(
-      function() {
-        console.log("Created a new post: "  + newPost);
-
-        location.reload();
-      }
-    );
-  });
 
 
+// $('#tags li').on("click", function(event){
+
+//   let category = $(this).attr('id')
+//   let categoryString = "/category/" + category;
+    
+//   $.get("/api/threads" + categoryString, function(data) {
+//     threads = data;}).then(function(data){
+
+
+      
+//     }
+//     );
+// });
+
+
+ 
+// function to change dropdown menu button to what ever is selected
 $(function(){
   
   $(".dropdown-menu li a").click(function(){
@@ -59,4 +54,6 @@ $(function(){
 
 });
 
-});
+
+})
+

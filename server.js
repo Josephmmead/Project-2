@@ -22,8 +22,6 @@ app.engine("handlebars", exphbs({ layoutsDir: __dirname + '/views/layouts'}));
 app.set("view engine", "handlebars");
 
 
-
-
 // // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);

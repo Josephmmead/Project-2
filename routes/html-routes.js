@@ -13,14 +13,19 @@ router.get('/', (req, res) => {
 });
 
 router.get('/posts', (req, res) => {
-  db.Post.findAll({}).then(function(results){
-    
+  db.Thread.findAll({
+    include: [db.Post]
+
+  }).then(function(results){
+    console.log(results)
   res.render('post', {Post: results})
 })
 });
 
 router.get('/threads', (req, res) => {
-  db.Thread.findAll({}).then(function(results){
+  db.Thread.findAll({
+    // order: '"createdAT" DESC'
+  }).then(function(results){
     
   res.render('thread', {Thread: results})
 })
