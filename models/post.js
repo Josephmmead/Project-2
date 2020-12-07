@@ -15,7 +15,14 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1]
-      }
+      },
+      thread_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      },
     });
   
     Post.associate = function(models) {

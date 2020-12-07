@@ -10,7 +10,7 @@ $("#threadCreate").on("click", function(event) {
       category: $(".dropdown-toggle").val()
     };
 
-    $.ajax("/api/thread", {
+    $.ajax("/api/threads", {
       type: "POST",
       data: newThread
     }).then(
@@ -23,14 +23,17 @@ $("#threadCreate").on("click", function(event) {
   });
 
 // create a new post 
-  $("#postCreate").on("submit", function(event) {
+  $("#postCreate").on("click", function(event) {
 
     event.preventDefault();
 
     var newPost = {
       title: $("#postTitle").val().trim(),
       user: $("#postUser").val().trim(),
-      body: $("postBody").val.trim()
+      body: $("postBody").val().trim(),
+      thread_name: $(".dropdown-toggle").val(),
+      // figure out how to get this Id from the handlebars 
+      threadID: $(".Something or other").val()
     };
 
     $.ajax("/api/post", {
@@ -44,8 +47,6 @@ $("#threadCreate").on("click", function(event) {
       }
     );
   });
-
-
 
 
 $(function(){
