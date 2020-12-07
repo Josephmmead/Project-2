@@ -1,13 +1,13 @@
 $(function() {
 
 // create a new thread
-$("#threadCreate").on("submit", function(event) {
+$("#threadCreate").on("click", function(event) {
 
     event.preventDefault();
 
     var newThread = {
       thread_name: $("#threadName").val().trim(),
-      category: $("#threadCategory").val()
+      category: $(".dropdown-toggle").val()
     };
 
     $.ajax("/api/thread", {
@@ -29,8 +29,8 @@ $("#threadCreate").on("submit", function(event) {
 
     var newPost = {
       title: $("#postTitle").val().trim(),
-      user: $("#postUser").val().trim,
-      body: $("postBody").val.trim
+      user: $("#postUser").val().trim(),
+      body: $("postBody").val.trim()
     };
 
     $.ajax("/api/post", {
@@ -45,5 +45,17 @@ $("#threadCreate").on("submit", function(event) {
     );
   });
 
+
+
+
+$(function(){
   
-})
+  $(".dropdown-menu li a").click(function(){
+    
+    $(".dropdown-toggle:first-child").text($(this).text());
+     $(".dropdown-toggle:first-child").val($(this).text());
+  });
+
+});
+
+});
