@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
     res.render('index', {Thread: results})
   })
 
+});
 
 router.get('/posts', (req, res) => {
   db.Post.findAll({}).then(function(results){
@@ -20,14 +21,11 @@ router.get('/posts', (req, res) => {
 });
 
 router.get('/threads', (req, res) => {
-  db.Thread.findAll({
-    
-  }).then(function(results){
+  db.Thread.findAll({}).then(function(results){
     console.log(results)
   res.render('thread', results)
 })
 });
 
-})
 
 };
