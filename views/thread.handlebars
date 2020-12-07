@@ -108,33 +108,41 @@
     <div class="col-xl-2" id="activeThread">
         <h4>Categories</h4>
         <ul>
-           <a href="/thread"><li>Gaming</li></a> 
-            <li>Coding</li>
-            <li>Crypto</li>
-            <li>Computer Building</li>
-            <li>Entertainment</li>
-            <li>Misc.</li>
-            <li>Reviews</li>
+           <a href="/threads"><li>Gaming</li></a> 
+            <a href="/threads"><li>Coding</li></a>
+            <a href="/threads"><li>Crypto</li></a>
+            <a href="/threads"><li>Computer Building</li></a> 
+            <a href="/threads"><li>Entertainment</li></a> 
+            <a href="/threads"><li>Misc.</li></a> 
+            <a href="/threads"><li>Reviews</li></a>  
         </ul>
     </div>
 
     <div class="col-xl-9" id="threadBody">
-        <h3>subReadits</h3>
+       <h3>subReadits</h3>
         <ul>
         {{#each Thread}}
-        {{> readIt/catThreads}} 
+        {{> readIt/subThread}} 
         {{/each}}
         </ul>
     </div>
 </div>
 </div>
 <br><br><br><br><br>
-<footer>
-    <div class="footer">
-        <p>Footer in the works</p>
-    </div>
-
-</footer>
+<footer class="footer">
+        <div class="container">
+            <span class="text-muted">
+                <div class="row justify-content-center">
+                    <div>
+                        <div id="createdBy">
+                            <div class="col-md-12 ">Copyright © 2020 Fake-r-Us All Rights Reserved</div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

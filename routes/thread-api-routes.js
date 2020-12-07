@@ -1,14 +1,14 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/thread", function(req, res) {
+  app.get("/api/threads", function(req, res) {
     
     db.Thread.findAll({}).then(function(dbThread) {
       res.json(dbThread);
     });
   });
 
-  app.get("/api/thread/:id", function(req, res) {
+  app.get("/api/threads/:id", function(req, res) {
     
     db.Thread.findOne({
       where: {
@@ -20,13 +20,13 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/thread", function(req, res) {
+  app.post("/api/threads", function(req, res) {
     db.Thread.create(req.body).then(function(dbThread) {
       res.json(dbThread);
     });
   });
 
-  app.delete("/api/thread/:id", function(req, res) {
+  app.delete("/api/threads/:id", function(req, res) {
     db.Thread.destroy({
       where: {
         id: req.params.id
@@ -37,7 +37,7 @@ module.exports = function(app) {
   });
 
 
-  app.get("/api/thread/:category", function(req, res) {
+  app.get("/threads/:category", function(req, res) {
     
     db.Thread.findAll({
       where: {
