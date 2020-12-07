@@ -27,18 +27,19 @@ $("#threadCreate").on("click", function(event) {
 
 
 
-$('#tags li').on("click", function(event){
+// $('#tags li').on("click", function(event){
 
-  let category = $(this).attr('id')
-  let categoryString = "/category/" + category;
+//   let category = $(this).attr('id')
+//   let categoryString = "/category/" + category;
     
-  $.get("/api/threads" + categoryString, function(data) {
-    threads = data;}.then(function(){
+//   $.get("/api/threads" + categoryString, function(data) {
+//     threads = data;}).then(function(data){
 
- 
-    }
-    ));
-});
+
+      
+//     }
+//     );
+// });
 
 
  
