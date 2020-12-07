@@ -36,4 +36,17 @@ module.exports = function(app) {
     });
   });
 
+
+  app.get("/api/thread/:category", function(req, res) {
+    
+    db.Thread.findAll({
+      where: {
+        category: req.params.category
+      },
+      include: [db.Post]
+    }).then(function(dbThread) {
+      res.json(dbThread);
+    });
+  });
+
 };
