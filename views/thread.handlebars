@@ -2,7 +2,7 @@
 <header>
     <div class="jumbotron jumbotron-fluid">
         <div class="container-fluid">
-            <h1 class="display-1" id="jumbotronTitle">readit</h1>
+           <a href="/"> <h1 class="display-1" id="jumbotronTitle" >readit</h1></a>
             <p class="lead" id="jumbotronText"> Definitely here before reddit.</p>
         </div>
     </div>
@@ -14,98 +14,53 @@
     <!-- Modal-->
     <!-- Button trigger modal -->
 
-    <div class="row justify-content-between">
-        <div class="col-6">
-            <div class="modal fade" id="myThreadModal">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-font">
-                                <h1>Create a new thread</h1>
+    <div class="row justify-content-center">
+        <div>
+            <div class="col">
+                <div class="modal fade" id="myThreadModal">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-font">
+                                    <h1>Create a new thread</h1>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-body">
-                            What is the threads name?
-                            <input class="form-control" id="threadName">
-                        </div>
-                        <div class="modal-body">
-                            Choose a category
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" id="threadCategory">
-                                    Gaming
-                                </button>
-                                <ul>
-                                    <div class="dropdown-menu">
-
-                                        <li> <a class="dropdown-item" href="#">Gaming</a></li>
-                                        <li> <a class="dropdown-item" href="#">Coding</a></li>
-                                        <li> <a class="dropdown-item" href="#">Crypto</a></li>
-                                        <li> <a class="dropdown-item" href="#">Computer Building</a></li>
-                                        <li> <a class="dropdown-item" href="#">Entertainment</a></li>
-                                        <li> <a class="dropdown-item" href="#">Misc.</a></li>
-                                        <li> <a class="dropdown-item" href="#">Reviews</a></li>
-
-                                    </div>
-                                </ul>
+                            <div class="modal-body">
+                                What is the threads name?
+                                <input class="form-control" id="threadName">
                             </div>
-                            <div class="modal-footer">
-                                <input class="btn btn-primary" data-dismiss="modal" value="Submit" id="threadCreate">
+                            <div class="modal-body">
+                                Choose a category
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false" id="threadCategory">
+                                        Gaming
+                                    </button>
+                                    <ul>
+                                        <div class="dropdown-menu">
+
+                                            <li> <a class="dropdown-item" href="#">Gaming</a></li>
+                                            <li> <a class="dropdown-item" href="#">Coding</a></li>
+                                            <li> <a class="dropdown-item" href="#">Crypto</a></li>
+                                            <li> <a class="dropdown-item" href="#">Computer Building</a></li>
+                                            <li> <a class="dropdown-item" href="#">Entertainment</a></li>
+                                            <li> <a class="dropdown-item" href="#">Misc.</a></li>
+                                            <li> <a class="dropdown-item" href="#">Reviews</a></li>
+
+                                        </div>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <input class="btn btn-primary" data-dismiss="modal" value="Submit"
+                                        id="threadCreate">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#myThreadModal">New
+                    Thread</a>
             </div>
-            <a href="#" data-toggle="modal" data-target="#myThreadModal">New Thread</a>
-        </div>
-        <div class="col-6">
-            <div class="modal fade" id="myPostModal">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-font">
-                                <h1>New Post</h1>
-                            </div>
-                        </div>
-                        <div class="modal-body" id="postUser">
-                            Username
-                            <input class="form-control">
-                        </div>
-                        <div class="modal-body" id="postTitle">
-                            Title
-                            <input class="form-control">
-                        </div>
-                        <div class="modal-body" id="postCategory">
-                            Enter text...
-                            <input class="form-control">
-                        </div>
-                        <div class="modal-body">
-                            Choose a thread to post in:
-                            <div class="btn-group" id="postThread">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" >
-                                    Threads
-                                </button>
-                                <ul>
-                                    <div class="dropdown-menu">
-                                        <li>
-                                            {{#each Thread}}
-                                           <a class="dropdown-item" href="#">{{dataValues.thread_name}}</a> 
-                                            {{/each}}
-                                            </a>
-                                        </li>
-                                    </div>
-                                </ul>
-                            </div>                    
-                        </div>
-
-                        <div class="modal-footer">
-                            <input class="btn btn-primary" data-dismiss="modal" value="Submit" id="postCreate">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="#" data-toggle="modal" data-target="#myPostModal">New Post</a>
         </div>
     </div>
 </section>
@@ -114,31 +69,19 @@
 
 
 <div class="row " id="threadRow">
-    <div class="col-xl-2" id="activeThread">
+    <div class="col-xl-2 selected" id="activeThread">
         <h4>Categories</h4>
-        <ul>
-            <a href="/threads">
-                <li>Gaming</li>
-            </a>
-            <a href="/threads">
-                <li>Coding</li>
-            </a>
-            <a href="/threads">
-                <li>Crypto</li>
-            </a>
-            <a href="/threads">
-                <li>Computer Building</li>
-            </a>
-            <a href="/threads">
-                <li>Entertainment</li>
-            </a>
-            <a href="/threads">
-                <li>Misc.</li>
-            </a>
-            <a href="/threads">
-                <li>Reviews</li>
-            </a>
+        <div class="categories">
+        <ul id="tags">
+          <li id="Gaming" value ="Gaming">  <a href="/threads">Gaming</a> </li>
+          <li id="Coding" value ="Coding">  <a href="/threads">Coding</a></li>
+          <li id="Crypto" value ="Crypto">  <a href="/threads">Crypto</a></li>
+          <li id="Computer Building" value ="Computer Building">  <a href="/threads">Computer Building</a> </li>
+          <li id="Entertainment" value ="Entertainment">  <a href="/threads">Entertainment</a> </li>
+          <li id="Misc." value ="Misc.">  <a href="/threads">Misc.</a> </li>
+          <li id="Reviews" value ="Reviews">  <a href="/threads">Reviews</a>  </li>
         </ul>
+        </div>
     </div>
 
     <div class="col-xl-9" id="threadBody">

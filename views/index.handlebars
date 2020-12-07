@@ -2,7 +2,9 @@
 <header>
     <div class="jumbotron jumbotron-fluid">
         <div class="container-fluid">
-            <h1 class="display-1" id="jumbotronTitle">readit</h1>
+            <a href="/">
+                <h1 class="display-1" id="jumbotronTitle">readit</h1>
+            </a>
             <p class="lead" id="jumbotronText"> Definitely here before reddit.</p>
         </div>
     </div>
@@ -16,50 +18,56 @@
 
     <div class="row justify-content-center">
         <div>
-        <div class="col ">
-            <div class="modal fade" id="myThreadModal">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-font">
-                                <h1>Create a new thread</h1>
+            <div class="col ">
+                <div class="modal fade" id="myThreadModal">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-font">
+                                    <h1>Create a new post!</h1>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-body">
-                            What is the threads name?
-                            <input class="form-control" id="threadName">
-                        </div>
-                        <div class="modal-body">
-                            Choose a category
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" id="threadCategory">
-                                    Gaming
-                                </button>
-                                <ul>
-                                    <div class="dropdown-menu" >
-
-                                        <li> <a class="dropdown-item" href="#">Gaming</a></li>
-                                        <li> <a class="dropdown-item" href="#">Coding</a></li>
-                                        <li> <a class="dropdown-item" href="#">Crypto</a></li>
-                                        <li> <a class="dropdown-item" href="#">Computer Building</a></li>
-                                        <li> <a class="dropdown-item" href="#">Entertainment</a></li>
-                                        <li> <a class="dropdown-item" href="#">Misc.</a></li>
-                                        <li> <a class="dropdown-item" href="#">Reviews</a></li>
-
-                                    </div>
-                                </ul>
+                            <div class="modal-body">
+                                What is the posts name?
+                                <input class="form-control" id="threadName">
                             </div>
-                            <div class="modal-footer">
-                                <input class="btn btn-primary" data-dismiss="modal" value="Submit" id="threadCreate">
+                            <div class="modal-body">
+                                Post Body
+                                <input class="form-control" id="threadContent">
+                            </div>
+                            <div class="modal-body">
+                                Choose a category
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false" id="threadCategory">
+                                        Gaming
+                                    </button>
+                                    <ul>
+                                        <div class="dropdown-menu">
+
+                                            <li> <a class="dropdown-item" href="#">Gaming</a></li>
+                                            <li> <a class="dropdown-item" href="#">Coding</a></li>
+                                            <li> <a class="dropdown-item" href="#">Crypto</a></li>
+                                            <li> <a class="dropdown-item" href="#">Computer Building</a></li>
+                                            <li> <a class="dropdown-item" href="#">Entertainment</a></li>
+                                            <li> <a class="dropdown-item" href="#">Misc.</a></li>
+                                            <li> <a class="dropdown-item" href="#">Reviews</a></li>
+
+                                        </div>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <input class="btn btn-primary" data-dismiss="modal" value="Submit"
+                                        id="threadCreate">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#myThreadModal">New
+                    Thread</a>
             </div>
-            <a href="#" data-toggle="modal" data-target="#myThreadModal">New Thread</a>
-        </div>  
-        </div>     
+        </div>
     </div>
 </section>
 <br>
@@ -69,42 +77,44 @@
 <div class="row " id="threadRow">
     <div class="col-xl-2 selected" id="activeThread">
         <h4>Categories</h4>
-        <ul>
-          <li>  <a href="/threads">Gaming</a> </li>
-           <li> <a href="/threads">Coding</a></li>
-          <li>  <a href="/threads">Crypto</a></li>
-          <li>  <a href="/threads">Computer Building</a> </li>
-          <li>  <a href="/threads">Entertainment</a> </li>
-          <li>  <a href="/threads">Misc.</a> </li>
-          <li>  <a href="/threads">Reviews</a>  </li>
-        </ul>
+        <div class="categories">
+            <ul id="tags">
+                <li id="Gaming" value="Gaming"> <a href="/threads">Gaming</a> </li>
+                <li id="Coding" value="Coding"> <a href="/threads">Coding</a></li>
+                <li id="Crypto" value="Crypto"> <a href="/threads">Crypto</a></li>
+                <li id="Computer Building" value="Computer Building"> <a href="/threads">Computer Building</a> </li>
+                <li id="Entertainment" value="Entertainment"> <a href="/threads">Entertainment</a> </li>
+                <li id="Misc." value="Misc."> <a href="/threads">Misc.</a> </li>
+                <li id="Reviews" value="Reviews"> <a href="/threads">Reviews</a> </li>
+            </ul>
+        </div>
     </div>
 
     <div class="col-xl-9" id="threadBody">
         <h3>subReadits</h3>
-        <ul>
-        {{#each Thread}}
-        {{> readIt/subThread}} 
-        {{/each}}
+        <ul class="threadDisplay">
+            {{#each Thread}}
+            {{> readIt/subThread}}
+            {{/each}}
         </ul>
     </div>
 </div>
 </div>
 <br><br><br><br><br>
 <footer class="footer">
-        <div class="container">
-            <span class="text-muted">
-                <div class="row justify-content-center">
-                    <div>
-                        <div id="createdBy">
-                            <div class="col-md-12 ">Copyright © 2020 Fake-r-Us All Rights Reserved</div>
-                        </div>
-                    </div>
+    <div class="container">
+        <span class="text-muted">
+            <div class="row justify-content-center">
+                <div>
+                    <div id="createdBy">
+                        <div class="col-md-12 ">Copyright © 2020 Fake-r-Us All Rights Reserved</div>
                     </div>
                 </div>
-            </span>
-        </div>
-    </footer>
+            </div>
+    </div>
+    </span>
+    </div>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

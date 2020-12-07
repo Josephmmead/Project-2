@@ -14,7 +14,6 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Post]
     }).then(function(dbThread) {
       res.json(dbThread);
     });
@@ -27,16 +26,21 @@ module.exports = function(app) {
   });
 
 
-  app.get("/threads/:category", function(req, res) {
+  app.get("/api/threads/:category", function(req, res) {
     
     db.Thread.findAll({
       where: {
         category: req.params.category
       },
-      include: [db.Post]
+     
     }).then(function(dbThread) {
       res.json(dbThread);
     });
+
   });
+
+
+
+
 
 };
