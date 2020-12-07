@@ -1,0 +1,81 @@
+@import "./variables";
+
+
+.jumbotron{
+    background-image: url("../img/jumbotron.png");
+    background-size: cover;
+    
+}
+//Jumbotron Text
+#jumbotronTitle {
+    @include flexCenter();
+    font-family: $primaryFont;
+    color: $jumbotronFontColor;
+    
+    
+}
+//Jumobotron secondary text
+#jumbotronText {
+    @include flexCenter();
+    font-family: $primaryFont;
+    color: $jumbotronFontColor;
+    
+}
+
+body{
+    background-color:  #6db2da !important;
+    
+}
+
+//New Threads 
+#activeThread {
+    @include threadBorder();
+    
+};
+
+//Thread Body
+#threadBody {
+    @include threadBorder();
+}
+
+#threadRow {
+    @include flexCenter();
+    column-count: 2;
+    column-gap: 100px;
+
+}
+
+//Modal
+.col-6 {
+    @include flexCenter();
+}
+
+.footer {
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(209, 176, 43);
+    color: white;
+    text-align: center;
+}
+
+.modal-font {
+    font-family: $primaryFont;
+}
+
+.modal-body {
+    font-family: $primaryFont;
+}
+
+input[type=text]  {
+    padding: 2px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+
+

@@ -1,57 +1,49 @@
+$(function() {
 
-// this was pulled from one of our projects if we can use any of it lets if not dont worry about deleting it.
+// create a new thread
+$("#threadCreate").on("submit", function(event) {
 
-
-// When the page loads, grab and display all of our posts
-$.get("/api/all", function(data) {
-
-    if (data.length !== 0) {
-  
-      for (var i = 0; i < 10; i++) {
-  
-        var row = $("<div>");
-        row.addClass("post");
-  
-        row.append("<p>" + data[i].user + " posted.. </p>");
-        row.append("<p>" + data[i].body + "</p>");
-        row.append("<p>On " + new Date(data[i].created_at).toLocaleDateString() + "</p>");
-  
-        $("#post-area").prepend(row);
-  
-      }
-    }
-  });
-  
-  // When user post (clicks addBtn)
-  $("#post-submit").on("click", function(event) {
     event.preventDefault();
-  
-    // Make a newpost object
-    var newPost = {
-      user: $("#author").val().trim(),
-      body: $("#post-box").val().trim(),
-      created_at: new Date().toISOString().slice(0, 19).replace('T', ' ')
+
+    var newThread = {
+      thread_name: $("#threadName").val().trim(),
+      category: $("#threadCategory").val()
     };
-  
-    console.log(newPost);
-  
-    // Send an AJAX POST-request with jQuery
-    $.post("/api/new", newPost)
-      // On success, run the following code
-      .then(function() {
-  
-        var row = $("<div>");
-        row.addClass("Post");
-  
-        row.append("<p>" + newPost.user + " posted: </p>");
-        row.append("<p>" + newPost.body + "</p>");
-        row.append("<p>On " + new Date(newPost.created_at).toLocaleDateString() + "</p>");
-  
-        $("#post-area").prepend(row);
-  
-      });
-  
-    // Empty each input box by replacing the value with an empty string
-    $("#author").val("");
-    $("#post-box").val("");
+
+    $.ajax("/api/thread", {
+      type: "POST",
+      data: newThread
+    }).then(
+      function() {
+        console.log("Created a new thread called:"  + newThread);
+
+        location.reload();
+      }
+    );
   });
+
+// create a new post 
+  $("#postCreate").on("submit", function(event) {
+
+    event.preventDefault();
+
+    var newPost = {
+      title: $("#postTitle").val().trim(),
+      user: $("#postUser").val().trim,
+      body: $("postBody").val.trim
+    };
+
+    $.ajax("/api/post", {
+      type: "POST",
+      data: newPost
+    }).then(
+      function() {
+        console.log("Created a new post: "  + newPost);
+
+        location.reload();
+      }
+    );
+  });
+
+  
+})

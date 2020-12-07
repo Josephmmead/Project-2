@@ -1,4 +1,21 @@
-<!--Jumbotron-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ReadIt</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="./public/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Sansita+Swashed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+    <!--Jumbotron-->
     <header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container-fluid">
@@ -34,16 +51,16 @@
                                     <h1>Create a new thread</h1>
                                 </div>
                             </div>
-                            <div class="modal-body" id="threadName">
+                            <div class="modal-body">
                                 What is the threads name?
                                 <input class="form-control">
                             </div>
-                            <div class="modal-body" id="threadCategory">
+                            <div class="modal-body">
                                 Choose a category
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false" id="threadCategory">
-                                      Gaming
+                                        aria-haspopup="true" aria-expanded="false">
+                                        Gaming
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="#">Gaming</a>
@@ -57,7 +74,7 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <input class="btn btn-primary" data-dismiss="modal" value="Submit" id="threadCreate">
+                                    <input class="btn btn-primary" data-dismiss="modal" value="Close">
                                 </div>
                             </div>
                         </div>
@@ -75,21 +92,21 @@
                                 </div>
 
                             </div>
-                            <div class="modal-body" id="postUser">
+                            <div class="modal-body">
                                 Username
                                 <input class="form-control">
                             </div>
-                            <div class="modal-body" id="postTitle">
+                            <div class="modal-body">
                                 Title
                                 <input class="form-control">
                             </div>
-                            <div class="modal-body" id="postCategory">
+                            <div class="modal-body">
                                 Enter text...
                                 <input class="form-control">
                             </div>
 
                             <div class="modal-footer">
-                                <input class="btn btn-primary" data-dismiss="modal" value="Submit" id="postCreate">
+                                <input class="btn btn-primary" data-dismiss="modal" value="Close">
                             </div>
                         </div>
                     </div>
@@ -103,26 +120,47 @@
 
 
 
-    
+
     <div class="row" id="threadRow">
         <div class="col-xl-1" id="activeThread">
-
-            <ul>
-
-               {{> readIt/categories}}
-            </ul>
-            
-            
+            {{#each Thread}}
+            {{>Thread/subThread}}
+            {{/each}}
 
 
+            <p>subReadits</p>
+            <li>Music</li>
+            <li>Sports</li>
+            <li>Gaming</li>
+            <li>News</li>
+            <li>Movies</li>
+            <li>News</li>
+            <li>Movies</li>
+            <li>News</li>
+            <li>Movies</li>
         </div>
-            
+
 
         <div class="col-xl-9" id="threadBody">
-            
-            {{#each Thread}}
-            {{> readIt/subThread}}
-            {{/each}}
+            <p>um is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's
+                Letraset sheets containing Lorem Ipsum passages, ae like Aldus PageMaker including versions of Lorem
+                Ipum is simply dummy text
+                of
+                the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                ever
+                since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into electronic
+                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+                of dummy text ever since the
+                1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+                has
+                survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+                PageMaker including versions of Lorem Ip</p>
+
         </div>
     </div>
     </div>
@@ -133,10 +171,8 @@
         </div>
 
 
-    </footer>
-    
 
-    <script type="module" src="public/assets/js/readIt.js"></script>
+        <script type="module" src="public/assets/js/readIt.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
@@ -149,7 +185,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-    
-     
-	
-	
+
+
+</body>
+
+</html>

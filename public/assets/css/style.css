@@ -1,0 +1,105 @@
+.jumbotron {
+  background-image: url("../img/jumbotron.png");
+  background-size: cover;
+}
+
+#jumbotronTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Anton", sans-serif;
+  color: #ce522d;
+}
+
+#jumbotronText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Anton", sans-serif;
+  color: #ce522d;
+}
+
+body {
+  background-color: #6db2da !important;
+}
+
+#activeThread {
+  border-radius: 7px / 7px;
+  background: #DAAD86;
+  padding: 20px;
+  background-size: auto;
+}
+
+#threadBody {
+  border-radius: 7px / 7px;
+  background: #DAAD86;
+  padding: 20px;
+  background-size: auto;
+}
+
+#threadRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 100px;
+          column-gap: 100px;
+}
+
+.col-6 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #d1b02b;
+  color: white;
+  text-align: center;
+}
+
+.modal-font {
+  font-family: "Anton", sans-serif;
+}
+
+.modal-body {
+  font-family: "Anton", sans-serif;
+}
+
+input[type=text] {
+  padding: 2px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+/*# sourceMappingURL=style.css.map */
