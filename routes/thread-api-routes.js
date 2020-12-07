@@ -26,16 +26,6 @@ module.exports = function(app) {
     });
   });
 
-  app.delete("/api/threads/:id", function(req, res) {
-    db.Thread.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbThread) {
-      res.json(dbThread);
-    });
-  });
-
 
   app.get("/threads/:category", function(req, res) {
     

@@ -46,7 +46,7 @@
                                     Gaming
                                 </button>
                                 <ul>
-                                    <div class="dropdown-menu" >
+                                    <div class="dropdown-menu">
 
                                         <li> <a class="dropdown-item" href="#">Gaming</a></li>
                                         <li> <a class="dropdown-item" href="#">Coding</a></li>
@@ -89,6 +89,25 @@
                             Enter text...
                             <input class="form-control">
                         </div>
+                        <div class="modal-body">
+                            Choose a thread to post in:
+                            <div class="btn-group" id="postThread">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" >
+                                    Threads
+                                </button>
+                                <ul>
+                                    <div class="dropdown-menu">
+                                        <li>
+                                            {{#each Thread}}
+                                           <a class="dropdown-item" href="#">{{dataValues.thread_name}}</a> 
+                                            {{/each}}
+                                            </a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>                    
+                        </div>
 
                         <div class="modal-footer">
                             <input class="btn btn-primary" data-dismiss="modal" value="Submit" id="postCreate">
@@ -108,41 +127,55 @@
     <div class="col-xl-2" id="activeThread">
         <h4>Categories</h4>
         <ul>
-           <a href="/threads"><li>Gaming</li></a> 
-            <a href="/threads"><li>Coding</li></a>
-            <a href="/threads"><li>Crypto</li></a>
-            <a href="/threads"><li>Computer Building</li></a> 
-            <a href="/threads"><li>Entertainment</li></a> 
-            <a href="/threads"><li>Misc.</li></a> 
-            <a href="/threads"><li>Reviews</li></a>  
+            <a href="/threads">
+                <li>Gaming</li>
+            </a>
+            <a href="/threads">
+                <li>Coding</li>
+            </a>
+            <a href="/threads">
+                <li>Crypto</li>
+            </a>
+            <a href="/threads">
+                <li>Computer Building</li>
+            </a>
+            <a href="/threads">
+                <li>Entertainment</li>
+            </a>
+            <a href="/threads">
+                <li>Misc.</li>
+            </a>
+            <a href="/threads">
+                <li>Reviews</li>
+            </a>
         </ul>
     </div>
 
     <div class="col-xl-9" id="threadBody">
-       <h3>subReadits</h3>
+        <h3>subReadits</h3>
         <ul>
-        {{#each Thread}}
-        {{> readIt/subThread}} 
-        {{/each}}
+            {{#each Thread}}
+            {{> readIt/subThread}}
+            {{/each}}
         </ul>
     </div>
 </div>
 </div>
 <br><br><br><br><br>
 <footer class="footer">
-        <div class="container">
-            <span class="text-muted">
-                <div class="row justify-content-center">
-                    <div>
-                        <div id="createdBy">
-                            <div class="col-md-12 ">Copyright © 2020 Fake-r-Us All Rights Reserved</div>
-                        </div>
-                    </div>
+    <div class="container">
+        <span class="text-muted">
+            <div class="row justify-content-center">
+                <div>
+                    <div id="createdBy">
+                        <div class="col-md-12 ">Copyright © 2020 Fake-r-Us All Rights Reserved</div>
                     </div>
                 </div>
-            </span>
-        </div>
-    </footer>
+            </div>
+    </div>
+    </span>
+    </div>
+</footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
